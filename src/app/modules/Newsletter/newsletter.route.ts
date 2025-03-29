@@ -8,23 +8,23 @@ import { auth } from '../../middlewares/auth';
 const router = express.Router();
 
 router.post(
-    '/',
-    validateRequestSchema(
-        NewsletterValidationSchema.createNewsletterValidationSchema,
-    ),
-    NewsLetterControllers.createNewsletterController,
+  '/',
+  validateRequestSchema(
+    NewsletterValidationSchema.createNewsletterValidationSchema,
+  ),
+  NewsLetterControllers.createNewsletterController,
 );
 
 router.get(
-    '/',
-    auth(USER_ROLE.admin),
-    NewsLetterControllers.getAllNewslettersController
+  '/',
+  auth(USER_ROLE.admin),
+  NewsLetterControllers.getAllNewslettersController,
 );
 
 router.delete(
-    '/:id',
-    auth(USER_ROLE.admin),
-    NewsLetterControllers.deleteNewsletterController
+  '/:id',
+  auth(USER_ROLE.admin),
+  NewsLetterControllers.deleteNewsletterController,
 );
 
 export const NewsletterRoutes = router;

@@ -1,4 +1,4 @@
 export type TNewsletter = {
-    email: string;
-    isDeleted?: boolean;
+  email: string;
+  isDeleted?: boolean;
 };
