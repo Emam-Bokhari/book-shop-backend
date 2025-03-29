@@ -1,8 +1,7 @@
-import QueryBuilder from '../../builder/QueryBuilder';
 import { HttpError } from '../../errors/HttpError';
 import { TProduct } from './product.interface';
 import { Product } from './product.model';
-import { searchableFields } from './product.utils';
+
 
 const createProduct = async (payload: TProduct) => {
   const createdProduct = await Product.create(payload);
@@ -10,24 +9,14 @@ const createProduct = async (payload: TProduct) => {
   return createdProduct;
 };
 
-const getAllProducts = async (query: Record<string, unknown>) => {
-  const productQuery = new QueryBuilder(Product.find(), query)
-    .search(searchableFields)
-    .filter()
-    .sortBy()
-    .paginate();
+const getAllProducts = async () => {
+  const products = await Product.find();
 
-  const meta = await productQuery.countTotal();
-  const result = await productQuery.modelQuery;
-
-  if (result.length === 0) {
+  if (products.length === 0) {
     throw new HttpError(404, 'No product were found in the database');
   }
 
-  return {
-    meta,
-    result,
-  };
+  return products;
 };
 
 const getProductsByCategory = async (category: string) => {

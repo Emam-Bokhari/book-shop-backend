@@ -8,34 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductServices = void 0;
-const QueryBuilder_1 = __importDefault(require("../../builder/QueryBuilder"));
 const HttpError_1 = require("../../errors/HttpError");
 const product_model_1 = require("./product.model");
-const product_utils_1 = require("./product.utils");
 const createProduct = (payload) => __awaiter(void 0, void 0, void 0, function* () {
     const createdProduct = yield product_model_1.Product.create(payload);
     return createdProduct;
 });
-const getAllProducts = (query) => __awaiter(void 0, void 0, void 0, function* () {
-    const productQuery = new QueryBuilder_1.default(product_model_1.Product.find(), query)
-        .search(product_utils_1.searchableFields)
-        .filter()
-        .sortBy()
-        .paginate();
-    const meta = yield productQuery.countTotal();
-    const result = yield productQuery.modelQuery;
-    if (result.length === 0) {
+const getAllProducts = () => __awaiter(void 0, void 0, void 0, function* () {
+    const products = yield product_model_1.Product.find();
+    if (products.length === 0) {
         throw new HttpError_1.HttpError(404, 'No product were found in the database');
     }
-    return {
-        meta,
-        result,
-    };
+    return products;
 });
 const getProductsByCategory = (category) => __awaiter(void 0, void 0, void 0, function* () {
     const products = yield product_model_1.Product.find({ category });

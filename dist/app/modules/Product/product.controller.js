@@ -24,14 +24,12 @@ const createProductController = (0, asyncHandler_1.asyncHandler)((req, res) => _
     });
 }));
 const getAllProductsController = (0, asyncHandler_1.asyncHandler)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const query = req.query;
-    const result = yield product_service_1.ProductServices.getAllProducts(query);
+    const products = yield product_service_1.ProductServices.getAllProducts();
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         message: 'Products retrieved successfully',
         statusCode: 200,
-        meta: result.meta,
-        data: result.result,
+        data: products,
     });
 }));
 const getProductsByCategoryController = (0, asyncHandler_1.asyncHandler)((req, res) => __awaiter(void 0, void 0, void 0, function* () {

@@ -15,15 +15,14 @@ const createProductController = asyncHandler(async (req, res) => {
 });
 
 const getAllProductsController = asyncHandler(async (req, res) => {
-  const query = req.query;
-  const result = await ProductServices.getAllProducts(query);
+
+  const products = await ProductServices.getAllProducts();
 
   sendResponse(res, {
     success: true,
     message: 'Products retrieved successfully',
     statusCode: 200,
-    meta: result.meta,
-    data: result.result,
+    data: products,
   });
 });
 
