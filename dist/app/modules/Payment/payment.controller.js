@@ -12,13 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaymentControllers = void 0;
 const asyncHandler_1 = require("../../utils/global/asyncHandler");
 const paymentSuccessController = (0, asyncHandler_1.asyncHandler)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.redirect(`https://book-shop-client-mauve.vercel.app/success`);
+    res.redirect(`https://borno-bihar-frontend-9tdv.vercel.app/success`);
 }));
 const paymentFailController = (0, asyncHandler_1.asyncHandler)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.redirect(`https://book-shop-client-mauve.vercel.app/fail`);
+    res.redirect(`https://borno-bihar-frontend-9tdv.vercel.app/fail`);
 }));
 const paymentCancelController = (0, asyncHandler_1.asyncHandler)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.redirect(`https://book-shop-client-mauve.vercel.app/cancelled`);
+    res.redirect(`https://borno-bihar-frontend-9tdv.vercel.app/cancelled`);
 }));
 exports.PaymentControllers = {
     paymentSuccessController,
