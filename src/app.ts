@@ -11,7 +11,7 @@ const app: Application = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({ origin: ['https://borno-bihar-frontend-9tdv.vercel.app'], credentials: true }));
+app.use(cors({ origin: ['https://borno-bihar-frontend-9tdv.vercel.app', 'http://localhost:5173'], credentials: true }));
 
 // application routes
 app.use('/api/v1', router);

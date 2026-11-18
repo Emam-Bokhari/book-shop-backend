@@ -42,11 +42,13 @@ class QueryBuilder {
         return this;
     }
     paginate() {
-        var _a, _b;
-        const page = Number((_a = this === null || this === void 0 ? void 0 : this.query) === null || _a === void 0 ? void 0 : _a.page) || 1;
-        const limit = Number((_b = this === null || this === void 0 ? void 0 : this.query) === null || _b === void 0 ? void 0 : _b.limit) || 10;
-        const skip = (page - 1) * limit;
-        this.modelQuery = this.modelQuery.skip(skip).limit(limit);
+        var _a, _b, _c, _d;
+        if (((_a = this === null || this === void 0 ? void 0 : this.query) === null || _a === void 0 ? void 0 : _a.page) || ((_b = this === null || this === void 0 ? void 0 : this.query) === null || _b === void 0 ? void 0 : _b.limit)) {
+            const page = Number((_c = this === null || this === void 0 ? void 0 : this.query) === null || _c === void 0 ? void 0 : _c.page) || 1;
+            const limit = Number((_d = this === null || this === void 0 ? void 0 : this.query) === null || _d === void 0 ? void 0 : _d.limit) || 10;
+            const skip = (page - 1) * limit;
+            this.modelQuery = this.modelQuery.skip(skip).limit(limit);
+        }
         return this;
     }
     fields() {
@@ -61,7 +63,7 @@ class QueryBuilder {
             const totalQueries = this.modelQuery.getFilter();
             const total = yield this.modelQuery.model.countDocuments(totalQueries);
             const page = Number((_a = this === null || this === void 0 ? void 0 : this.query) === null || _a === void 0 ? void 0 : _a.page) || 1;
-            const limit = Number((_b = this === null || this === void 0 ? void 0 : this.query) === null || _b === void 0 ? void 0 : _b.limit) || 10;
+            const limit = Number((_b = this === null || this === void 0 ? void 0 : this.query) === null || _b === void 0 ? void 0 : _b.limit) || total || 1;
             const totalPage = Math.ceil(total / limit);
             return {
                 total,

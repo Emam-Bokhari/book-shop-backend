@@ -39,7 +39,7 @@ const createProductValidationSchema = z.object({
     description: z
       .string()
       .trim()
-      .max(1000, 'Description can not exceed 1000 characters'),
+      .max(10000, 'Description can not exceed 10000 characters'),
     price: z
       .number()
       .int()
@@ -165,7 +165,7 @@ const updateProductValidationSchema = z.object({
     description: z
       .string()
       .trim()
-      .max(1000, 'Description can not exceed 1000 characters')
+      .max(10000, 'Description can not exceed 10000 characters')
       .optional(),
     price: z.number().int().max(10000, 'Price can not exceed 10000').optional(),
     images: z.array(z.string()).optional(),
