@@ -8,7 +8,7 @@ A scalable, secure, and production-ready RESTful API designed for an online book
 
 - Live API Base URL: https://book-shop-backend-alpha-red.vercel.app/api/v1
 - Health Check Endpoint: https://book-shop-backend-alpha-red.vercel.app/
-- Live Frontend Client: https://borno-bihar-frontend-9tdv.vercel.app
+- Live Frontend Client: https://borno-bihar-frontend-umber.vercel.app
 
 ---
 
