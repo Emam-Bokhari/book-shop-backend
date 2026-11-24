@@ -1,13 +1,14 @@
-# Book Shop Backend API
+# Borno Bihar - Book Shop Backend API
 
-A scalable, secure, and production-ready RESTful API designed for an online bookstore platform. Built with TypeScript, Node.js, Express.js, and MongoDB with Mongoose, the backend provides role-based access control (Admin and Customer), catalog and inventory management, order processing, SSLCommerz payment gateway integration, comprehensive analytics, and customer support services.
+A scalable, secure, and production-ready RESTful API designed for Borno Bihar, an online bookstore platform. Built with TypeScript, Node.js, Express.js, and MongoDB with Mongoose, the backend provides role-based access control (Admin and Customer), catalog and inventory management, order processing, SSLCommerz payment gateway integration, comprehensive analytics, and customer support services.
 
 ---
 
-## Live Deployment Links
+## Live Deployment & Repository Links
 
+- GitHub Repository: https://github.com/Emam-Bokhari/bornobihar-backend
 - Live API Base URL: https://book-shop-backend-alpha-red.vercel.app/api/v1
-- Health Check Endpoint: https://book-shop-backend-alpha-red.vercel.app/
+- Health Check Endpoint: https://book-shop-backend-alpha-red.vercel.app
 - Live Frontend Client: https://borno-bihar-frontend-umber.vercel.app
 
 ---
@@ -78,7 +79,7 @@ A scalable, secure, and production-ready RESTful API designed for an online book
 ## Folder Structure
 
 ```text
-Book-Shop-Server/
+bornobihar-backend/
 |-- src/
 |   |-- @types/
 |   |   `-- sslcommerz-lts.d.ts
@@ -250,8 +251,8 @@ Ensure you have the following installed on your machine:
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/Emam-Bokhari/Book-Shop-Server.git
-cd Book-Shop-Server
+git clone https://github.com/Emam-Bokhari/bornobihar-backend.git
+cd bornobihar-backend
 ```
 
 ### 3. Install Dependencies
